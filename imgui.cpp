@@ -997,8 +997,13 @@ CODE
 // [SECTION] INCLUDES
 //-------------------------------------------------------------------------
 
-#if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)
+#if defined(_MSC_VER)
+#ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
+#endif
+#ifndef _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING
+#define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING
+#endif
 #endif
 
 #ifndef IMGUI_DEFINE_MATH_OPERATORS
